@@ -1,0 +1,24 @@
+CREATE TABLE IF NOT EXISTS users (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  username TEXT UNIQUE NOT NULL,
+  password TEXT NOT NULL,
+  coins INTEGER DEFAULT 10,
+  avatar TEXT DEFAULT '',
+  bio TEXT DEFAULT ''
+);
+CREATE TABLE IF NOT EXISTS tasks (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  user_id INTEGER NOT NULL,
+  link TEXT NOT NULL,
+  like_target INTEGER NOT NULL,
+  current_like INTEGER DEFAULT 0,
+  status TEXT DEFAULT 'open',
+  title TEXT
+);
+CREATE TABLE IF NOT EXISTS submissions (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  task_id INTEGER NOT NULL,
+  user_id INTEGER NOT NULL,
+  proof TEXT DEFAULT '',
+  UNIQUE(task_id, user_id)
+);

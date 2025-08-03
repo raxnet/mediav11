@@ -1,0 +1,11 @@
+name = "raxnet"
+compatibility_date = "2025-08-03"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "raxnet-db"
+database_id = "your-d1-id"
+
+[[kv_namespaces]]
+binding = "KV"
+id = "your-kv-id"
